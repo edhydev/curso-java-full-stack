@@ -23,6 +23,15 @@ async function loadUsers() {
     document.querySelector("#users tbody").outerHTML = userListHTML;
 }
 
-function deleteUser(id) {
-    alert(id);
+async function deleteUser(id) {
+    if (confirm('¿Desea eliminar este usuario?')) {
+        await fetch('api/user/' + id, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        });
+        location.reload();
+    }
 }

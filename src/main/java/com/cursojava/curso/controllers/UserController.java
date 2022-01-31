@@ -3,10 +3,7 @@ package com.cursojava.curso.controllers;
 import com.cursojava.curso.dao.UsuarioDao;
 import com.cursojava.curso.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,10 +25,15 @@ public class UserController {
         user.setSurnames("Jiménez");
         user.setEmail("edhy.mxm@gmail.com");
         user.setPhone("0123456789");
-        user.setUsername("edhymx1");
         user.setPassword("password");
 
         return user;
+    }
+
+    @PostMapping(value = "api/user")
+    public void getUser(@RequestBody User user) {
+        System.out.println(user.toString());
+        usuarioDao.register(user);
     }
 
     @DeleteMapping(value = "api/user/{id}")
