@@ -1,3 +1,5 @@
+DROP DATABASE cursojava;
+
 CREATE SCHEMA IF NOT EXISTS cursojava DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
 USE cursojava ;
 
@@ -17,4 +19,4 @@ ALTER TABLE `cursojava`.`user`
 CHANGE COLUMN `phone` `phone` VARCHAR(32) NULL ;
 
 INSERT INTO `cursojava`.`user` (`name`, `surnames`, `email`, `phone`, `password`) VALUES ('Edgar', 'Jimenez Galicia', 'edgar.mxm@gmail.com', '1234567891', 'password');
-INSERT INTO `cursojava`.`user` (`name`, `surnames`, `email`, `phone`, `password`) VALUES ('Cesar', 'Rubio Guzman', 'cesar.mxm@gmail.com', '1234567892', 'password');
+INSERT INTO `cursojava`.`user` (`name`, `surnames`, `email`, `phone`, `password`) VALUES ('Cesar', 'Rubio Guzman', 'cesar.mxm@gmail.com', null, 'password');
