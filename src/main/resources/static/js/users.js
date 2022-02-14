@@ -17,7 +17,7 @@ async function loadUsers() {
     let userListHTML = '';
     for (const user of users) {
         let deleteBtn = `<a href=\"#\" onclick="deleteUser(${user.id})" class=\"btn btn-danger btn-circle\"><i class=\"fas fa-trash\"></i></a>`;
-        userListHTML += `<tr><td>${user.name}</td><td>${user.name} ${user.surnames}</td><td>${user.email}</td><td>${user.phone === null ? '-' : user.phone}</td><td>${deleteBtn}</td></tr>`;
+        userListHTML += `<tr><td>${user.id}</td><td>${user.name} ${user.surnames}</td><td>${user.email}</td><td>${user.phone === null ? '-' : user.phone}</td><td>${deleteBtn}</td></tr>`;
     }
 
     document.querySelector("#users tbody").outerHTML = userListHTML;
